@@ -17,17 +17,17 @@ export DISPLAY=:0
 xhost +si:localuser:root
 
 
-# for launch linux (after pip install chart_studio plotly)
+# for launch linux xvfb (require pip install chart_studio plotly)
 
 yum install -y xvfb
 
-
 vi /usr/local/lib/python3.6/site-packages/chart_studio/plotly/plotly.py
 
-plotly.io.orca.config.executable = '/path/to/orca'
+'''
+plotly.io.orca.config.executable = '/usr/local/bin/orca'
 plotly.io.orca.config.save()
 
 import plotly.io as pio
 pio.orca.config.use_xvfb = True
 pio.orca.config.save()
-
+'''
