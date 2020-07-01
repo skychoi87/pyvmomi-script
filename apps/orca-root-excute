@@ -1,0 +1,33 @@
+
+# create /usr/local/bin/orca
+vi /usr/local/bin/orca
+
+'''
+#!/bin/bash
+for i in $*;
+do
+    params="$params $i"
+done
+    /path/to/AppImage --no-sandbox $params
+'''
+
+
+# add .bashrc or profile
+export DISPLAY=:0
+xhost +si:localuser:root
+
+
+# for launch linux (after pip install chart_studio plotly)
+
+yum install -y xvfb
+
+
+vi /usr/local/lib/python3.6/site-packages/chart_studio/plotly/plotly.py
+
+plotly.io.orca.config.executable = '/path/to/orca'
+plotly.io.orca.config.save()
+
+import plotly.io as pio
+pio.orca.config.use_xvfb = True
+pio.orca.config.save()
+

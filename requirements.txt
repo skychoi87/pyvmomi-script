@@ -1,0 +1,7 @@
+setuptools
+requests
+pyvmomi
+pyyaml
+chart_studio
+plotly
+psutil
