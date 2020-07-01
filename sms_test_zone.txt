@@ -1,1 +1,0 @@
- -s 172.19.181.48 -u administrator@vsphere.local -p DEVtcloud123!
