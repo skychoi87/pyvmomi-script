@@ -1,0 +1,3 @@
+# pyvmomi-script
+
+Get (VM, HOST)'s info, perf, ...
